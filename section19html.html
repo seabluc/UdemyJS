@@ -139,22 +139,74 @@
 
   <h6>
     <script language="javascript" type="text/javascript"> // loop practice
-      <!--
-      var count = 0;
       /*
+      var count = 0;
+  
       while (count < 10) {
         document.write("count is currently at: ", count, "<br>");
         count++;
       }
-      */
+      
       do {
         document.write("count is currently at: ", count, "<br>");
         count++;
       } while (count <= 10);
-      //-->
+      
+      for (count = 0; count < 10; count++) {
+        document.write("<br>", "count is currently at: ", count);
+      }
+      document.write("<br> LOOP OVER: The value of count is now ", count);
+      
+
+     for (var i = 1; i <= 12; i++) {
+      for (var j = 1; j <= 12; j++) {
+        document.write("multiplication table: ", i , " * ", j, " = ", i * j, "<br>");
+      }
+     }
+     */
+    for (var i = 1; i <= 100; i++) {
+      if (i >= 5 && i <= 90) {
+        continue; // continue immediately jumps to the next iteration, completely skipping the current iteration (hence why 5 - 90 are not outputted) 
+      }
+      document.write("<br>", i);
+    }
+    /*
+    outerLoop: for (var i = 0; i <= 5; i++) {
+      innerLoop: for (var j = 0; j <= 5; j++) {
+        if (i === 2 && j === 2) {
+          continue outerLoop;
+        }
+      console.log("i:", i, "j:", j);
+      }
+    }
+    */
+
+    function hello(name) {
+      var name = prompt("Enter your name");
+      var confirmation = confirm("Are you sure this is your name?"); // Built-in function that displays a popup dialog box w/ OK and Cancel buttons. OK returns true, cancel returns false.
+      if (confirmation) {
+        alert("hello " + name); // Built-in function that displays a popup dialog box w/ a msg and an OK button. Primarily used for debugging. 
+      } else {
+        alert("ABORT");
+      }
+    }
+    function ooga() {
+      document.write("ooga booga");
+    }
+
     </script>
-    <noscript>Your browser does not support JavaScript</noscript>     
+    <noscript>Your browser does not support JavaScript</noscript>
+    <input type="button" onclick="hello(name)" value="click here">
+    <div onmouseover="ooga()">Whatever you do, do not hover over this text</div>  
   </h6>
+
+
+  <h1>
+    <button onclick="hello(name)">click me pls</button>
+    <script language="javascript" type="text/javascript">
+    </script>
+    <noscript>Your browser does not support JavaScript</noscript>  
+  </h1>
 
 </body>
 </html>
