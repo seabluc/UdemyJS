@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="section19css.css" />
   <title>JavaScript Section</title>
-  <script language="javascript" type="text/javascript" src="external.js">//External javascript</script>  
+  <script language="javascript" type="text/javascript" src="functions.js">//External javascript</script>  
 </head>
 <body> 
   <!-- <h1><center> -->
@@ -42,6 +42,32 @@
 
   </script>
   <noscript>Your browser does not support JavaScript</noscript> 
+
+
+  <h1><center> 
+    <script language="javascript" type="text/javascript"> // OOP PRACTICE 
+      var student=new Object(); // JS OOP is Prototype based, while C++ and Java are class based... what is a
+      document.write("OOP PRACTICE:<br>");
+      // student.name="Seab";
+      // student.age="26";
+      // student.location="Kirkland";
+
+      var student={
+        name:"seab",
+        age:"26",
+        location:"Kirkland",
+        // Function inside object
+        person: function() {
+          document.write("This function is inside of the student object");
+        }
+      }
+
+      document.write(student.name, ", ", student["age"], ", ", student.location, "<br>"); // Two ways to access student attributes, dot operator or brackets
+    </script>
+    <!-- Using the function inside the student object -->
+    <form><input type="button" onclick="student.person()" value="function"></form>
+    <noscript>Your browser does not support JavaScript</noscript>
+  </center></h1>
 
   <!--  
   <h2><center>
@@ -181,20 +207,6 @@
       }
     }
     */
-
-    function hello(name) {
-      var name = prompt("Enter your name");
-      var confirmation = confirm("Are you sure this is your name?"); // Built-in function that displays a popup dialog box w/ OK and Cancel buttons. OK returns true, cancel returns false.
-      if (confirmation) {
-        alert("hello " + name); // Built-in function that displays a popup dialog box w/ a msg and an OK button. Primarily used for debugging. 
-      } else {
-        alert("ABORT");
-      }
-    }
-    function ooga() {
-      document.write("ooga booga");
-    }
-
     </script>
     <noscript>Your browser does not support JavaScript</noscript>
     <input type="button" onclick="hello(name)" value="click here">
@@ -210,15 +222,7 @@
     <button onclick="alert('welcome')">click here</button> 
   </h1>
 
-  <!--
-  <script>
-    function redirect() { // function which redirects you to YouTube
-      window.location="http://www.youtube.com";
-    }
-    document.write("you will be redirected to the main site in 5sec");
-    setTimeout("redirect()", 5000); setTimeout calls the function, and 5000 is the time it will take to redirect in ms
-  </script>
-  -->
+
 
 
 </body>
