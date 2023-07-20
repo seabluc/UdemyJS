@@ -1,138 +1,196 @@
 <!DOCTYPE html>
-<!-- shft+ctrl+p to open command pallete -->
-<!-- merge this Udemy-Web-Dev-Course branch to master branch to save changes -->
 <html lang="en-us">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- External CSS & JavaScript files -->
   <link rel="stylesheet" href="section19css.css" />
-  <title>JavaScript Section</title>
-  <script language="javascript" type="text/javascript" src="functions.js">//External javascript</script>  
+  <script language="javascript" type="text/javascript" src="functions.js"></script>
+  <title>JavaScript Section</title>  
 </head>
-<body> 
-  <!-- <h1><center> -->
-  <h1>Header one just chillin</h1>
-  <h2>Header two has not been committed yet</h2>
-  <script language="javascript" type="text/javascript"> // language and type attributes are omittable, but it's good practice to keep it
-    document.write("<h1><center>"+"welcome to javascript"+"</center></h1>");
+
+
+<body>
+  <img
+  <header class="centered"> 
+  <script language="javascript" type="text/javascript">
+    // document.write("<header>"+"Welcome to JavaScript!"+"</header>");
+    // Tags can be included in document.write() method, but it's impractical
+    document.write("Welcome to JavaScript!");
   </script>
   <noscript>Your browser does not support JavaScript</noscript> 
-  <!-- </h1></center> We can create tags inside the write function! -->
+    <img class="doggoRes" src="animeBravery.png" />
+  </header>
   
+
+  <!-- ----------------------------- VARIABLES ----------------------------- -->
+  <!--
+    JavaScript variables are dynamic as they aren't bound to a specific data
+    type at the time of declaration. This is due to being loosely typed
+    (data types can change after being declared without explicit type casting).
+  -->
   <script language="javascript" type="text/javascript">
-    // Three types of data types in JS: Numbers, string, and boolean.
-    /*
-    var a; 
-    var b;
-    var c;
-    */
-    var a,b,c; // Var is used for global and local variables
+    document.write("VARIABLE PRACTICE:<br>");
+    // Three types of data types in JS: Numbers, string, and boolean
+    var a, b, c; // Var is used for global and local variables
     a = 5.1;
     b = 6.7;
     c = a + b;
-    var name = "bubbas";
-    document.write("value of a = ",a, " and b = ",b); 
-    if (name == "bubbas") {
-      document.write("<br>if is executed");
-    } else if (name == "bubbies") {
+    document.write("value of a = ", a, " and b = ", b, " so... c = ", a + b); 
+    
+
+    // Dynamic variable tests w/ if-else-if statements
+    document.write("<br>IF ELSE PRACTICE:<br>");
+    var dynamicTesting = "bubbas";
+    if (dynamicTesting === "bubbas") {
+      document.write("if is executed");
+    } else if (dynamicTesting === "bubba") {
         document.write("<br>else if is executed");
     } else { 
         document.write("<br>else is executed");
     }
 
+
+    var dynamicTesting = "bubba";
+    if (dynamicTesting === "bubbas") {
+      document.write("<br>if is executed");
+    } else if (dynamicTesting === "bubba") {
+        document.write("<br>else if is executed");
+    } else { 
+        document.write("<br>else is executed");
+    }
+
+
+    var dynamicTesting = c;
+    if (dynamicTesting === "bubbas") {
+      document.write("<br>if is executed");
+    } else if (dynamicTesting === "bubba") {
+        document.write("<br>else if is executed");
+    } else { 
+        document.write("<br>else is executed");
+    }
   </script>
   <noscript>Your browser does not support JavaScript</noscript> 
 
 
-  <h1><center> 
-    <script language="javascript" type="text/javascript"> // OOP PRACTICE 
-      var student=new Object(); // JS OOP is Prototype based, while C++ and Java are class based... what is a
+  <!-- ---------------------------- OBJECTS/OOP ---------------------------- -->
+  <h1> 
+    <script language="javascript" type="text/javascript"> 
+      var student=new Object();
       document.write("OOP PRACTICE:<br>");
-      // student.name="Seab";
-      // student.age="26";
-      // student.location="Kirkland";
 
-      var student={
-        name:"seab",
-        age:"26",
-        location:"Kirkland",
-        // Function inside object
+      /* Two ways to create a student object:
+      1. 
+      student.name="Seab";
+      student.age="26";
+      student.location="Kirkland";
+      */
+
+      // 2.
+      var student = {
+        name: "seab",
+        age: "26",
+        location: "Kirkland",
+        // Function inside student object
         person: function() {
-          document.write("This function is inside of the student object");
+          document.write("This function is inside of the student object <br>");
+          document.write(
+            "DOCUMENT OVERWRITTEN; document.write called after webpage loaded");
         }
       }
 
-      document.write(student.name, ", ", student["age"], ", ", student.location, "<br>"); // Two ways to access student attributes, dot operator or brackets
-    </script>
-    <!-- Using the function inside the student object -->
-    <form><input type="button" onclick="student.person()" value="function"></form>
-    <noscript>Your browser does not support JavaScript</noscript>
-  </center></h1>
 
+      // Two ways to access student attributes: dot operator or brackets
+      document.write(
+        "Student's name: ", student.name, "<br>Student's age: ", student["age"],
+        "<br>Student's location: ", student.location, "<br>");
+
+      
+      document.write("<br>FUNCTION WITH ARGUMENTS<br>")
+      // Function w/ arguments
+      function hero(n, r, hp) {
+        this.name = n;
+        this.role = r;
+        this.health = hp;
+      }
+      var genji = new hero("Genji", "DPS", 200);
+      document.write(
+        "Hero info:<br>", "NAME: ", genji.name, "<br>ROLE: ", genji.role,
+        "<br>HP: ", genji.health, "<br>");
+
+      var dd = new Date(); // Date object is predefined, just like in Java
+      document.write("<br>DATE OBJECT<br>")
+      document.write("dd = ", dd, "<br>");
+      document.write("dd.getDate() = ", dd.getDate());
+      document.write("<br>dd.getTime() = ", dd.getTime());
+      document.write("<br>dd.getSeconds() = ", dd.getSeconds());
+      document.write("<br>dd.getMonth() = ", dd.getMonth());
+    </script>
+    <noscript>Your browser does not support JavaScript</noscript>
+  </h1>
+
+
+  <!-- ----------------------------- FUNCTIONS ----------------------------- -->
+  <!-- Using the function inside the student object -->
+  <form>
+    <input type="button" onclick="student.person()" 
+      value="Function from student object">
+  </form>  
+  <button onclick="hello(name)">Gimmie yo name</button>
+  <span class="customSpan" onmouseover="ooga()">
+    Whatever you do, do not hover over this text
+  </span>
+
+
+  <!-- ------------------------------ IF-ELSE ------------------------------ -->
   <!--  
   <h2><center>
-  <script language="javascript" type="text/javascript"> // If else to determine if the user's input is an even or odd number
+  <script language="javascript" type="text/javascript">
+    // If else to determine if the user's input is an even or odd number
     var num = prompt('Enter any number');
     if (num % 2 == 0) {
-      document.write(num, " is an even number")
+      document.write(num, " is an even number");
     } else {
       document.write(num, " is an odd number");
     }
   </script>
   <noscript>Your browser does not support JavaScript</noscript> 
-
   </center></h2>
+  -->
+  
+
+  <!-- ------------------------------ ELSE-IF ------------------------------ -->
+  <!--
   <h3>
-    <script language="javascript" type="text/javascript"> // Else if to determine the largest inputted number
-    var a = prompt("Enter a number");
-    var b = prompt("Enter another number");
-    var c = prompt("Enter the last number");
-    document.write("a = ", a , "<br>b = ", b , "<br>c = ", c, "<br>");
-    if (a > b && a > c) {
-      document.write(a, " is the largest number!");
-    } else if (b > a && b > c) {
-      document.write(b, " is the largest number!");
-    } else if (c > a && a < b) {
-      document.write(c, " is the largest number!");
-    } else {
-      document.write("<br>trippin");
-    }
-    </script>
-    <noscript>Your browser does not support JavaScript</noscript> 
-  </h3>
-
-
-  <h4>
-    <script language="javascript" type="text/javascript"> // Switch statement
-    var a = prompt("Enter a number from 0-2");
-    var num = parseInt(a);
-      switch (num) {
-        case 0:
-          document.write("<br> Case 0 is called");
-          break;
-        case 1:
-          document.write("<br> Case 1 is called");
-          break;
-        case 2:
-          document.write("<br> Case 2 is called");
-          break;
-        default:
-          document.write("<br>", num, " is not within 0-2... default is called");
+    <script language="javascript" type="text/javascript"> 
+      // Else if to determine the largest inputted number
+      var a = prompt("Enter a number");
+      var b = prompt("Enter another number");
+      var c = prompt("Enter the last number");
+      document.write("a = ", a , "<br>b = ", b , "<br>c = ", c, "<br>");
+      if (a > b && a > c) {
+        document.write(a, " is the largest number!");
+      } else if (b > a && b > c) {
+        document.write(b, " is the largest number!");
+      } else if (c > a && a < b) {
+        document.write(c, " is the largest number!");
+      } else {
+        document.write("<br>trippin");
       }
     </script>
     <noscript>Your browser does not support JavaScript</noscript> 
-  </h4>
+  </h3>
+  -->
 
 
+  <!-- ------------------------------ SWITCH ------------------------------- -->
+  <!--
   <h5>
-    <script language="javascript" type="text/javascript"> // Switch statements simple calculator
+    <script language="javascript" type="text/javascript"> 
+    // Switch statements to create a simple calculator
     var operator = prompt("Enter operator: add, subtract, multiply, or divide");
     switch (operator) {
       case 'add':
-        // var num1 = prompt("enter 1st operand");
-        // var num2 = prompt("enter 2nd operand");
-        // var result1 = parseInt(num1);
-        // var result2 = parseInt(num2);
         var num1 = parseInt(prompt("enter 1st operand"));
         var num2 = parseInt(prompt("enter 2nd operand"));
         var result = num1 + num2;
@@ -157,47 +215,52 @@
         document.write(num1, " / ", num2, " = ", result);
         break;
       default:
-        document.write("<br>good one");    
+        document.write("<br>u messed up lol");    
     }
     </script>
     <noscript>Your browser does not support JavaScript</noscript> 
   </h5>
--->
+  -->
 
+
+  <!-- ------------------------------- LOOPS ------------------------------- -->
+  <!--
   <h6>
-    <script language="javascript" type="text/javascript"> // loop practice
-      /*
-      var count = 0;
-  
+    <script language="javascript" type="text/javascript">
+      // While loop
+      var countWhile = 0;
       while (count < 10) {
-        document.write("count is currently at: ", count, "<br>");
-        count++;
+        document.write("count is currently at: ", countWhile, "<br>");
+        countWhile++;
       }
       
-      do {
-        document.write("count is currently at: ", count, "<br>");
-        count++;
-      } while (count <= 10);
       
-      for (count = 0; count < 10; count++) {
+      // Do-while loop
+      var countDoWhile = 0;
+      do {
+        document.write("count is currently at: ", countDoWhile, "<br>");
+        countDoWhile++;
+      } while (countDoWhile <= 10);
+      
+
+      // For loop
+      for (var count = 0; count < 10; count++) {
         document.write("<br>", "count is currently at: ", count);
       }
       document.write("<br> LOOP OVER: The value of count is now ", count);
       
-
-     for (var i = 1; i <= 12; i++) {
-      for (var j = 1; j <= 12; j++) {
-        document.write("multiplication table: ", i , " * ", j, " = ", i * j, "<br>");
-      }
-     }
-     */
-    for (var i = 1; i <= 100; i++) {
-      if (i >= 5 && i <= 90) {
-        continue; // continue immediately jumps to the next iteration, completely skipping the current iteration (hence why 5 - 90 are not outputted) 
-      }
+      for (var i = 1; i <= 100; i++) {
+        if (i >= 5 && i <= 90) {
+          continue; 
+          /* Continue immediately jumps to the next iteration, which skips the 
+             current iteration (hence 5-90 are not outputted)
+          */
+        }
       document.write("<br>", i);
     }
+
     /*
+    // Example of labeling a nested for loop: 
     outerLoop: for (var i = 0; i <= 5; i++) {
       innerLoop: for (var j = 0; j <= 5; j++) {
         if (i === 2 && j === 2) {
@@ -209,20 +272,8 @@
     */
     </script>
     <noscript>Your browser does not support JavaScript</noscript>
-    <input type="button" onclick="hello(name)" value="click here">
-    <div onmouseover="ooga()">Whatever you do, do not hover over this text</div>  
   </h6>
-
-
-  <h1>
-    <button onclick="hello(name)">click me pls</button>
-    <script language="javascript" type="text/javascript">
-    </script>
-    <noscript>Your browser does not support JavaScript</noscript> 
-    <button onclick="alert('welcome')">click here</button> 
-  </h1>
-
-
+  -->
 
 
 </body>

@@ -1,7 +1,32 @@
+/* TAG SELECTORS */
 h1 {
     font-size: 18px;
 }
-
 h2 {
     font-size: 16px;
+}
+body {
+    background-image: url("lobdog.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* CLASS SELECTORS */
+.doggoRes {
+    width: 200px;
+    height: 200px;
+}
+.centered {
+    font: bold italic 18px Arial;
+    text-decoration: underline;
+    width: 300px;
+    margin: 0 auto /* Center horizontally */
+}
+
+.customSpan {
+    position: absolute;
+    bottom: 500px;
+    right: 100px;
+    font-size: 20px;
+    color: red;
 }
